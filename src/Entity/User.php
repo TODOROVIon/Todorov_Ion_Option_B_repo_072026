@@ -126,14 +126,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     
   }
 
-  public function getApiAcces(): bool
+  public function getApiAccess(): bool
   {
       return $this->apiAccess;
   }
 
-  public function setApiAcces(bool $apiAcces): static
+  public function setApiAccess(bool $apiAccess): static
   {
-      $this->apiAccess = $apiAcces;
+      $this->apiAccess = $apiAccess;
 
       return $this;
   }

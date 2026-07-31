@@ -18,6 +18,7 @@ class UserFixtures extends Fixture
         $admin->setEmail('aurelie.doe@example.com');
         $admin->setPassword($this->hasher->hashPassword($admin,'admin123'));
         $admin->setRoles(['ROLE_ADMIN']);
+        $admin->setApiAccess(true);
         $manager->persist($admin);
 
         $user = new User();
@@ -26,6 +27,7 @@ class UserFixtures extends Fixture
         $user->setEmail('john.doe@example.com');
         $user->setPassword($this->hasher->hashPassword($user, 'user123'));
         $user->setRoles(['ROLE_USER']);
+        $user->setApiAccess(true);
         $manager->persist($user);
 
         $manager->flush();

@@ -25,6 +25,14 @@ class ProductFixtures extends Fixture
         $creme->setPrice(12.99);
         $creme->setPicture('/public/img/creme.jpg');
         $manager->persist($creme);
+        
+        $deodorant = new Product();
+        $deodorant->setName('Deodorant');
+        $deodorant->setShortDescription('Deodorant for all skin types');
+        $deodorant->setFullDescription('Deodorant for all skin types, enriched with natural ingredients to nourish and protect your skin.');
+        $deodorant->setPrice(7.99);
+        $deodorant->setPicture('/public/img/deodorant.jpg');
+        $manager->persist($deodorant);
 
         $manager->flush();
     }
