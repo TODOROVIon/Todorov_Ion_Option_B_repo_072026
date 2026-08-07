@@ -26,6 +26,12 @@ class OrderItem
     #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 2)]
     private ?string $unitPrice = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $productName = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $productPicture = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -75,6 +81,30 @@ class OrderItem
     public function setUnitPrice(float $unitPrice): static
     {
         $this->unitPrice = $unitPrice;
+
+        return $this;
+    }
+
+    public function getProductName(): ?string
+    {
+        return $this->productName;
+    }
+
+    public function setProductName(string $productName): static
+    {
+        $this->productName = $productName;
+
+        return $this;
+    }
+
+    public function getProductPicture(): ?string
+    {
+        return $this->productPicture;
+    }
+
+    public function setProductPicture(string $productPicture): static
+    {
+        $this->productPicture = $productPicture;
 
         return $this;
     }
