@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Repository\ProductRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Lexik\Bundle\JWTAuthenticationBundle\Services\JWTTokenManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -57,5 +58,33 @@ class ApiController extends AbstractController
                 'apiAccess' => $user->getApiAccess()
             ]
         ], Response::HTTP_OK);          //200
+    }
+
+
+ #[Route('/api/products', name: 'api_products', methods: ['GET'])]
+    public function getProducts(ProductRepository $productRepo): JsonResponse
+    {
+        $products = $productRepo->findAll();
+
+        if(empty($products)) {
+            return $this->json([
+                'error' => 'Aucun produit trouvé'
+            ], Response::HTTP_NOT_FOUND);       //404
+        }
+        
+        $data = [];
+        foreach ($products as $product) {
+            $data[] = [
+                'id' => $product->getId(),
+                'name' => $product->getName(),
+                'shortDescription' => $product->getShortDescription(),
+                'fullDescription' => $product->getFullDescription(),
+                'price' => $product->getPrice(),
+                'picture' => $product->getPicture()
+            ];
+        }
+
+        return $this->json($data, Response::HTTP_OK);          //200
+
     }
 }
