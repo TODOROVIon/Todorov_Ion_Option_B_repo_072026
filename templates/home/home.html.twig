@@ -1,7 +1,20 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Home page{% endblock %}
+{% block title %}Bienvenue - GreenGoodies{% endblock %}
 
 {% block body %}
-
+    <section class="home">
+        <div class="home-content">
+            <div class="home-text">
+                <h1>Bienvenue</h1>
+                <p>Découvrez notre univers de produits durables et éthiques pour une consommation responsable</p>
+                <br>
+                <p>Retrouvez des articles d’hygiène & beauté, des accessoires & boissons et du prêt 
+                à porter</p>
+            </div>
+            <div class="home-image">    
+                <img src="{{ asset('/img/Image less new.png') }}" alt="Image d'accueil">
+            </div>
+        </div>
+    </section>
 {% endblock %}
