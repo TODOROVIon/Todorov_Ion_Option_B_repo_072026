@@ -32,6 +32,8 @@ security:
             jwt: ~
             
         main:
+            login_link: 
+                success_handler: App\Security\LoginLinkSuccessHandler           // TODO prendre l'info
             lazy: true
             provider: app_user_provider
             form_login:
