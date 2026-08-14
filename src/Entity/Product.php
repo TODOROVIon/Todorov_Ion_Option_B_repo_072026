@@ -23,7 +23,7 @@ class Product
     #[ORM\Column(length: 255)]
     private ?string $shortDescription = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(type:'text')]
     private ?string $fullDescription = null;
 
     #[ORM\Column(type: 'decimal', precision: 10, scale: 2)]
