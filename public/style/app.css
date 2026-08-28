@@ -100,12 +100,11 @@ main {
     text-align: right;
     margin-top: 4rem;
 }
-
 .footer p {
     color: #666;
     font-size: 14px;
 }
-
+/* Home side */
 .home-container{
     background-color: #cdd4c8;
     padding: 0;
@@ -144,7 +143,7 @@ main {
     border-radius: 0;
     object-fit: cover;
 }
-
+/* Product side */
 .products-container h2{
     color:black;
     padding: 0 4rem;
@@ -155,7 +154,6 @@ main {
     margin: 0 auto;
     padding: 0 2rem;
 }
-
 .product-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -164,7 +162,6 @@ main {
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .product-image{
     width: 100%;
     height: 400px;
@@ -175,23 +172,19 @@ main {
     height: 100%;
     object-fit: cover;
 }
-
 .product-details{
     padding: 1rem 2rem;
     text-align:center;
 }
-
 .product-details h3{
     font-size: 18px;
     margin-bottom: 0.5rem;
 }
-
 .product-details p{
     font-size: 16px;
     margin-bottom: 1rem;
     line-height: 1.4;
 }
-
 .product-details a {
     display: block;
     width: 100%;
@@ -202,10 +195,57 @@ main {
     font-size: 14px;
     transition: all 0.6s ease;
   }
-
 .product-details a:hover {
     width: 100%;
     display: block;
     background-color: hsl(0, 0%, 0%);
     color: #fff;
-  } 
+  }
+/* Conviction side */
+.conviction-container{
+    background-color: #EBE3D3;
+    padding: 0;
+    width: 100%;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    overflow: hidden;
+}
+.conviction-content{
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    align-items: stretch;
+    max-width: 100%;
+}
+.conviction-text{
+    padding: 3rem 13rem 3rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    font-size: 30px;
+}
+.conviction-text h2{
+    font-size: 30px;
+    margin-bottom: 1rem;
+}
+.conviction-text p{
+    font-size: 16px;
+    line-height: 1.4;
+}
+.conviction-image{
+    padding: 0;
+    margin: 0;
+    line-height: 0;
+    width: 100%;
+    height: 100%;
+}
+.conviction-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    display: block;
+    border-radius: 0;
+    object-fit: cover;
+  }

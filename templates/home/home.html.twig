@@ -7,6 +7,7 @@
         <div class="home-content">
             <div class="home-text">
                 <h1>Bienvenue</h1>
+                <br>
                 <p>Découvrez notre univers de produits durables et éthiques pour une consommation responsable</p>
                 <br>
                 <p>Retrouvez des articles d’hygiène & beauté, des accessoires & boissons et du prêt 
@@ -17,6 +18,7 @@
             </div>
         </div>
     </section>
+
     <section class="products-container">
             <h2>NOS PRODUITS</h2>
             <div class="product-grid">
@@ -36,6 +38,18 @@
                     </div>
                 {% endfor %}
             </div>
-        
     </section>
+
+    <section class="conviction-container">
+        <div class="conviction-content">
+            <div class="conviction-text">
+                <h2>NOTRE CONVICTION</h2>
+                <p>Chez GreenGoodies, nous croyons en un monde où le commerce peut être synonyme de bien-être pour la planète et ses habitants. Notre mission est de vous proposer une sélection rigoureuse de produits qui allient qualité, durabilité et éthique</  p>
+            </div>
+            <div class="conviction-image">
+                <img src="{{ asset('/img/Image convinction.jpg') }}" alt="Image de conviction">
+            </div>
+        </div>  
+    </section>
+
 {% endblock %}
