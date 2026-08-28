@@ -3,7 +3,7 @@
 {% block title %}Bienvenue - GreenGoodies{% endblock %}
 
 {% block body %}
-    <section class="home">
+    <section class="home-container">
         <div class="home-content">
             <div class="home-text">
                 <h1>Bienvenue</h1>
@@ -16,5 +16,26 @@
                 <img src="{{ asset('/img/Image less new.png') }}" alt="Image d'accueil">
             </div>
         </div>
+    </section>
+    <section class="products-container">
+            <h2>NOS PRODUITS</h2>
+            <div class="product-grid">
+                {% for product in products %}
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="{{ asset('/img/produits/' ~ product.picture) }}" alt="{{ product.name }}">
+                        </div>
+                        <div class="product-details">
+                        <div>
+                            <h3>{{ product.name }}</h3>
+                            <p>{{ product.shortDescription }}</p>
+                        </div>
+                            <p class="price">{{ product.price }} €</p>
+                            <p><a href="#">Voir le produit</a></p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        
     </section>
 {% endblock %}
