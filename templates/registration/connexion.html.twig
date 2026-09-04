@@ -3,32 +3,50 @@
 {% block title %}Connexion{% endblock %}
 
 {% block body %}
-    <h1>Connexion</h1>
 
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
+    <section class="connexion-container">
+        <div class="connexion-content">
+            <div class="connexion-image">
+                <img src="/img/Image connexion.png">
+            </div>
+            <div class="connexion-form">
+                <h1>Connexion</h1>
 
-    <form method="post">
-        <div class="form-group">
-            <label for="inputEmail">Email</label>
-            <input type="email" value="{{ last_username }}" name="_username" id="inputEmail" class="form-control" required autofocus>
+                {% if error %}
+                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+
+                <form method="post">
+                    <div class="form-group">
+                        <label for="inputEmail">Email</label>
+                        <input type="email" value="{{ last_username }}" name="_username" id="inputEmail" class="form-control" required autofocus>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputPassword">Mot de passe</label>
+                        <input type="password" name="_password" id="inputPassword" class="form-control" required>
+                    </div>
+
+                    <input type="hidden" name="_csrf_token"
+                        value="{{ csrf_token('authenticate') }}">
+
+                    <button type="submit" class="btn btn-good">Se connecter</button>
+
+                </form>
+
+                <p class="connex">
+                    <a href="{{ path('app_inscription') }}">Pas encore de compte ? S'inscrire</a>
+                </p>
+            </div>
         </div>
+    </section>
 
-        <div class="form-group">
-            <label for="inputPassword">Mot de passe</label>
-            <input type="password" name="_password" id="inputPassword" class="form-control" required>
-        </div>
 
-        <input type="hidden" name="_csrf_token"
-               value="{{ csrf_token('authenticate') }}">
 
-        <button type="submit" class="btn btn-primary">Se connecter</button>
 
-    </form>
 
-    <p>
-        <a href="{{ path('app_inscription') }}">Pas encore de compte ? S'inscrire</a>
-    </p>
+
+
+
 
 {% endblock %}

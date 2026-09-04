@@ -249,6 +249,7 @@ main {
     border-radius: 0;
     object-fit: cover;
   }
+
 /* Values side */
 .values-container{
     background-color: #e8f0e3;
@@ -297,10 +298,10 @@ main {
     border-radius: 0;
     object-fit: cover;
   }
+
 /*Product detail page*/
 .product-detail-container{
     background-color: #f8f8f8;
-    
 }
 .product-detail-content{
     /*background-color: rgba(0, 0, 0, 0.1);*/
@@ -323,25 +324,20 @@ main {
     height: 900px;
     overflow-y: auto;
 }
-
 .product-detail-text h2{
     margin-bottom: 1rem;
 }
-
 .product-detail-text .price-prod-id{
     margin-bottom: 2rem;
 }
-
 .product-detail-text p{
     margin-bottom: 0.5rem;
 }
-
 .product-detail-text h3{
     max-height: 300px;
     overflow-y: auto;
     margin-bottom: 2rem;
 }
-
 .ajout-panier{
     background-color: #5f5f5f;
     color: white;
@@ -357,3 +353,68 @@ main {
 .ajout-panier:hover{
     background-color: #000;
 }
+/*Connexion section*/
+.connexion-container{
+    background-color: #f8f8f8;
+}
+.connexion-content{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+.connexion-image{
+    height: 100%;
+}
+.connexion-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.connexion-form{
+    padding: 0 15% 55% 15%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.connexion-form h1{
+    font-size: 34px;
+    margin-bottom: 3rem;
+    font-weight: 400;
+}
+.connexion-form .form-group{
+        margin-bottom: 2rem;
+}
+.connexion-form label{
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 20px;
+    color: #5f5f5f;
+}
+.connexion-form input{
+    width: 100%;
+    padding: 1rem;
+    font-size: 26px;
+    background-color: #f8f8f8;
+    border: 1px solid #5f5f5f;
+}
+.btn-good{
+    width: 100%;
+    padding: 1rem;
+    background-color: #5f5f5f;
+    color: #f8f8f8;
+    border: none;
+    font-size: 26px;
+    transition: background-color 0.5s ease;
+    margin-top: 2rem;
+}
+.btn-good:hover{
+    background-color: #000;
+}
+.connex{
+    text-align: center;
+    margin-top: 2rem;
+}
+.connex a{
+    color: #5f5f5f;
+    text-decoration: none;
+}
+/*Inscription section*/
