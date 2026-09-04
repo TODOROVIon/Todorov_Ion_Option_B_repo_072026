@@ -28,12 +28,12 @@
                             <img src="{{ asset('/img/produits/' ~ product.picture) }}" alt="{{ product.name }}">
                         </div>
                         <div class="product-details">
-                        <div>
-                            <h3>{{ product.name }}</h3>
-                            <p>{{ product.shortDescription }}</p>
-                        </div>
+                            <div>
+                                <h3>{{ product.name }}</h3>
+                                <p>{{ product.shortDescription }}</p>
+                            </div>
                             <p class="price">{{ product.price }} €</p>
-                            <p><a href="#">Voir le produit</a></p>
+                            <p><a href="{{ path('app_product', {id: product.id}) }}">Voir le produit</a></p>
                         </div>
                     </div>
                 {% endfor %}

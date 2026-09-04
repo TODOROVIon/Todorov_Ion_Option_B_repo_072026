@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produit Details{% endblock %}
+
+{% block body %}
+    <section class="product-detail-container">
+        <div class="product-detail-content">
+
+            <div class="product-detail-image">    
+                <img src="{{ asset('/img/produits/' ~  product.picture )}}" alt="Image produit detail">
+            </div>
+
+            <div class="product-detail-text">
+                <h2>{{ product.name }}</h2>
+                <h1 class="price-prod-id">{{ product.price }} €</h1>
+                <p>Description</p>
+                <h3>{{ product.fullDescription }}</h3>
+                <a class="ajout-panier" href="#">Ajouter au panier</a>
+            </div>
+
+        </div>
+    </section>
+
+    
+
+{% endblock %}
