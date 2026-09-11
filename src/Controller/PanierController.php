@@ -21,6 +21,12 @@ class PanierController extends AbstractController
 
         $order = $orderRepo->findOneBy(['user'=>$user, 'status'=>'cart']);
 
+        if (!$order){
+            return $this->render('panier/index.html.twig', [
+                'items' => [],
+                'total' => 0,
+            ]);
+        }
 
         return $this->render('panier/index.html.twig', [
             'items' => $order->getOrderItems(),
@@ -78,4 +84,19 @@ class PanierController extends AbstractController
 
         return $this->redirectToRoute('app_panier');
     }
+
+        #[Route('/panier/remove', name: 'app_panier_remove')]
+    public function remove(OrderRepository $orderRepo, EntityManagerInterface $em): Response
+    {
+        $user = $this->getUser();
+    
+        $order =$orderRepo->findOneBy(['user'=>$user, 'status'=>'cart']);
+
+        if ($order){
+            $em->remove($order);
+            $em->flush();
+        }
+        return $this->redirectToRoute('app_panier');
+    }
+
 }

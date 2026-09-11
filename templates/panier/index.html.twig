@@ -5,7 +5,9 @@
 {% block body %}
     <section class="panier-container">
         <h1>Mon Panier</h1>
+        <a href="{{ path('app_panier_remove') }}" class="btn-supprimer">Vider le panier</a>
         {% for item in items %}
+                <img src="{{ asset('/img/produits/' ~ item.productPicture )}}" alt="Image produit" class="item-picture">
                 <p class="item-name">Produit: {{ item.productName }}</p>
                 <p class="item-quantity">Quantité: {{ item.quantity }}</p>
                 <p class="item-price">Prix unitaire: {{ item.unitPrice }} €</p>
