@@ -31,6 +31,9 @@ class Order
     #[ORM\OneToMany(targetEntity: OrderItem::class, mappedBy: 'order', orphanRemoval: true, cascade: ['persist', 'remove'])]
     private Collection $orderItems;
 
+    #[ORM\Column(length: 50)]
+    private ?string $status = null;
+
     public function __construct()
     {
         $this->orderItems = new ArrayCollection();
@@ -103,6 +106,18 @@ class Order
                 $orderItem->setOrder(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getStatus(): ?string
+    {
+        return $this->status;
+    }
+
+    public function setStatus(string $status): static
+    {
+        $this->status = $status;
 
         return $this;
     }
