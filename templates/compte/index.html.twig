@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello Compte{% endblock %}
+
+{% block body %}
+
+    {% if orders is empty%}
+        <p>Aucune commande trouvée.</p>
+    {% else %}
+        {% for order in orders %}
+            <p>Id: {{ order.id }}</p>
+            <p>Commande: {{ order.orderDate|date('d/m/Y') }}</p>
+            <p>Price: {{ order.totalPrice }}</p>
+        {% endfor %}
+    {% endif %}
+
+{% endblock %}
