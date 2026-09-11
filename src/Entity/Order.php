@@ -32,7 +32,7 @@ class Order
     private Collection $orderItems;
 
     #[ORM\Column(length: 50)]
-    private ?string $status = null;
+    private ?string $status = 'cart';
 
     public function __construct()
     {
