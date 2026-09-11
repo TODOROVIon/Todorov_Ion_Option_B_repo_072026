@@ -99,4 +99,26 @@ class PanierController extends AbstractController
         return $this->redirectToRoute('app_panier');
     }
 
+
+    #[Route('/panier/validation', name: 'app_panier_validation')]
+    public function validation(OrderRepository $orderRepo, EntityManagerInterface $em
+        ): Response
+    {
+        $user = $this->getUser();
+        $order = $orderRepo->findOneBy(['user'=>$user, 'status'=>'cart']);
+
+        if (!$order || $order->getOrderItems()->isEmpty()) {
+            $this->addFlash('error', 'Votre panier est vide.');
+            return $this->redirectToRoute('app_panier');
+        }
+
+        $order->setStatus('validated');
+        $order->setOrderDate(new \DateTimeImmutable());
+
+        $em->flush();
+
+        $this->addFlash('success','Voctre commande a été validée');
+
+        return $this->redirectToRoute('app_panier');
+    }
 }
