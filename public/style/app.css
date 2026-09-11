@@ -381,11 +381,12 @@ main {
     font-weight: 400;
 }
 .connexion-form .form-group{
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
 }
 .connexion-form label{
     display: block;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
     font-size: 20px;
     color: #5f5f5f;
 }
@@ -395,6 +396,14 @@ main {
     font-size: 26px;
     background-color: #f8f8f8;
     border: 1px solid #5f5f5f;
+}
+.connexion-form input[type="checkbox"] + label{
+    display: inline;
+    width:auto;
+    size: 20px;
+}
+.connexion-form input[type="checkbox"]{
+    width: auto;
 }
 .btn-good{
     width: 100%;

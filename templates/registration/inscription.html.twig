@@ -3,22 +3,42 @@
 {% block title %}Inscription{% endblock %}
 
 {% block body %}
-    <h1>Inscription</h1>
 
-    {{ form_errors(registrationForm) }}
+    <section class="connexion-container">
+        <div class="connexion-content">
+            <div class="connexion-image">
+                <img src="/img/Image inscription.jpg">
+            </div>
+            <div class="connexion-form">
+                <h1>Inscription</h1>
 
-    {{ form_start(registrationForm) }}
-        {# {{ form_row(registrationForm.lastName) }} #}
-        {{ form_row(registrationForm.lastName, { 'attr': {'class': 'foo'} }) }}
-        {{ form_row(registrationForm.firstName) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+                {{ form_errors(registrationForm) }}
 
-        <button type="submit" class="btn">S'inscrire</button>
-    {{ form_end(registrationForm) }}
+                {{ form_start(registrationForm) }}
+                    {# {{ form_row(registrationForm.lastName) }} #}
+                    {{ form_row(registrationForm.lastName, { 'attr': {'class': 'foo'} }) }}
+                    {{ form_row(registrationForm.firstName) }}
+                    {{ form_row(registrationForm.email) }}
+                    {{ form_row(registrationForm.plainPassword) }}
+                    
+                    {# personallisation d'affichage #}
+                    
+                    <div>
+                        {{ form_widget(registrationForm.agreeTerms) }}
+                        {{ form_label(registrationForm.agreeTerms) }}
+                        {{ form_errors(registrationForm.agreeTerms) }}
+                    </div>
 
-    <p>
-        <a href="{{ path('app_login') }}">Déjà un compte ? Se connecter</a>
-    </p>
+                    <button type="submit" class="btn btn-good">S'inscrire</button>
+                {{ form_end(registrationForm) }}
+
+                <p class="connex">
+                    <a href="{{ path('app_login') }}">Déjà un compte ? Se connecter</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+
 {% endblock %}
