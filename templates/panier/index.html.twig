@@ -19,7 +19,7 @@
                         <div class="item-details">
                             <p class="item-name">Produit: {{ item.productName }}</p>
                             <p class="item-quantity">Quantité: {{ item.quantity }}</p>
-                            <p class="item-price">{{ item.unitPrice }} €</p>
+                            <p class="item-price">{{ item.unitPrice|number_format(2, ',', ' ') }} €</p>
                         </div>
                     </div>
                 {% endfor %}
@@ -27,7 +27,7 @@
         {% endif %}
 
         <div class="panier-total">
-            <h2 class="total">Total panier: {{ total }} €</h2>
+            <h2 class="total">Total panier: {{ total|number_format(2, ',', ' ') }}€</h2>
             <p class="btn-supprimer">Frais de livraison : Offert</p>
         </div>
 

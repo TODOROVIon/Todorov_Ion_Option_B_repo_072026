@@ -32,9 +32,9 @@
                                 <h3>{{ product.name }}</h3>
                                 <p>{{ product.shortDescription }}</p>
                             </div>
-                            <p class="price">{{ product.price }} €</p>
-                            <p><a href="{{ path('app_product', {id: product.id}) }}">Voir le produit</a></p>
+                            <p class="price">{{ product.Price|number_format(2, ',', ' ')}} €</p>
                         </div>
+                        <a href="{{ path('app_product', {id: product.id}) }}" class="product-link">Voir le produit</a>
                     </div>
                 {% endfor %}
             </div>

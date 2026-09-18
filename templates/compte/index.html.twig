@@ -26,7 +26,7 @@
                         <tr>
                             <td>{{ order.id }}</td>
                             <td>{{ order.orderDate|date('d/m/Y') }}</td>
-                            <td>{{ order.totalPrice }}€</td>
+                            <td>{{ order.totalPrice|number_format(2, ',', ' ') }}€</td>
                         </tr>
                     {% endfor %}
 
