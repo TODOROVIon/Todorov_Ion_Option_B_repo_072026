@@ -14,6 +14,12 @@
         {% endfor %}
     {% endif %}
 
-    <a href="#">Activer mon accès API</a>
+    {% if user.apiAccess %}
+        <a href="{{ path('app_active_api') }}">Desactiver mon accès API</a>
+    {% else %}
+        <a href="{{ path('app_active_api') }}">Activer mon accès API</a>
+    {% endif %}
+
+    <a href="{{ path('app_delete') }}">Supprimer mon compte</a>
 
 {% endblock %}
