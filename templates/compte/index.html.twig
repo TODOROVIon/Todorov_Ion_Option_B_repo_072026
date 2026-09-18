@@ -3,23 +3,50 @@
 {% block title %}Hello Compte{% endblock %}
 
 {% block body %}
+<section class="compte-background">
+    <div class="compte-container">
 
-    {% if orders is empty%}
-        <p>Aucune commande trouvée.</p>
-    {% else %}
-        {% for order in orders %}
-            <p>Id: {{ order.id }}</p>
-            <p>Commande: {{ order.orderDate|date('d/m/Y') }}</p>
-            <p>Price: {{ order.totalPrice }}</p>
-        {% endfor %}
-    {% endif %}
+        <h1>Mon compte</h1>
 
-    {% if user.apiAccess %}
-        <a href="{{ path('app_active_api') }}">Desactiver mon accès API</a>
-    {% else %}
-        <a href="{{ path('app_active_api') }}">Activer mon accès API</a>
-    {% endif %}
+        <div class="compte-info">
+            <h2>Mes commandes</h2>
 
-    <a href="{{ path('app_delete') }}">Supprimer mon compte</a>
+            {% if orders is empty%}
+                <p>Aucune commande trouvée.</p>
+            {% else %}
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>N</th>
+                            <th>Date</th>
+                            <th>Prix</th>
+                        </tr>
+                    </thead>
+                    {% for order in orders %}
+                        <tr>
+                            <td>{{ order.id }}</td>
+                            <td>{{ order.orderDate|date('d/m/Y') }}</td>
+                            <td>{{ order.totalPrice }}€</td>
+                        </tr>
+                    {% endfor %}
 
+                </table>    
+            {% endif %}
+
+        </div>
+
+        <div class="compte-card">
+            <h2>Mon accès API</h2>
+            {% if user.apiAccess %}
+                <a href="{{ path('app_active_api') }}" class="btn-valider">Desactiver mon accès API</a>
+            {% else %}
+                <a href="{{ path('app_active_api') }}" class="btn-valider">Activer mon accès API</a>
+            {% endif %}
+        </div>
+
+        <div class="compte-card">
+            <a href="{{ path('app_delete') }}" class="btn-valider">Supprimer mon compte</a>
+        </div>
+    </div>
+</section>
 {% endblock %}

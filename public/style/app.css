@@ -430,7 +430,7 @@ main {
 /* Panier */
 .panier-background{
     background-color: #EBE3D3;
-    padding: 5rem;
+    padding: 3rem;
 }
 .panier-container{
     max-width: 600px;
@@ -438,7 +438,7 @@ main {
 }
 .panier-container h1{
     text-align: center;
-    font-size: 34px;
+    font-size: 30px;
 }
 .panier-items{
 }
@@ -490,8 +490,50 @@ main {
     text-align: center;
     text-decoration: none;
     font-size: 26px;
-    transition: background-color 0.5s ease;
 }
 .btn-valider:hover {
       background-color: #000;
   }
+.compte-background{
+    background-color: #EBE3D3;
+    padding: 3rem 0;
+}
+.compte-container{
+    max-width: 600px;
+    margin: auto;
+}
+.compte-container h1{
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 2rem;
+}
+.compte-info{
+    background-color: white;
+    padding: 3rem;
+    margin-bottom: 1rem;
+}
+.compte-info h2{
+    font-size: 20px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+.table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.table thead th{
+    text-align: left;
+    font-size: 14px;
+    font-weight: 500;
+    color: #666;
+}
+.table tbody td{
+    border-bottom: 1px solid #000000;
+    padding: 1rem 0;
+    font-size: 18px;
+}
+.compte-card{
+    background-color: white;
+    padding: 3rem;
+    margin-bottom: 1rem;
+}
