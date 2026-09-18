@@ -431,6 +431,7 @@ main {
 .panier-background{
     background-color: #EBE3D3;
     padding: 3rem;
+    min-height: calc(100vh - 200px);
 }
 .panier-container{
     max-width: 600px;
