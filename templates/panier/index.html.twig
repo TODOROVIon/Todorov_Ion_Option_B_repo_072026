@@ -3,19 +3,36 @@
 {% block title %}Mon Panier{% endblock %}
 
 {% block body %}
-    <section class="panier-container">
+<section class="panier-background">
+    <div class="panier-container">
+
         <h1>Mon Panier</h1>
-        <a href="{{ path('app_panier_remove') }}" class="btn-supprimer">Vider le panier</a>
-        {% for item in items %}
-                <img src="{{ asset('/img/produits/' ~ item.productPicture )}}" alt="Image produit" class="item-picture">
-                <p class="item-name">Produit: {{ item.productName }}</p>
-                <p class="item-quantity">Quantité: {{ item.quantity }}</p>
-                <p class="item-price">Prix unitaire: {{ item.unitPrice }} €</p>
-                <p class="item-subtotal">Sous-total: {{ item.quantity * item.unitPrice }} €</p>
-        {% endfor %}
 
-                <h2>Total: {{ total }} €</h2>
+        {% if items is empty %}
+            <p>Le panier est vide.</p>
+        {% else %}
+            <div class="panier-items">
+                <a href="{{ path('app_panier_remove') }}" class="btn-supprimer">x Vider le panier</a>
+                {% for item in items %}
+                    <div class="panier-item">
+                        <img src="{{ asset('/img/produits/' ~ item.productPicture )}}" alt="Image produit" class="item-picture">
+                        <div class="item-details">
+                            <p class="item-name">Produit: {{ item.productName }}</p>
+                            <p class="item-quantity">Quantité: {{ item.quantity }}</p>
+                            <p class="item-price">{{ item.unitPrice }} €</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
 
-            <a href="{{ path('app_panier_validation') }}" class="btn-retour">Valider la commande</a>
-    </section>
+        <div class="panier-total">
+            <h2 class="total">Total panier: {{ total }} €</h2>
+            <p class="btn-supprimer">Frais de livraison : Offert</p>
+        </div>
+
+        <a href="{{ path('app_panier_validation') }}" class="btn-valider">Valider la commande</a>
+
+    </div>
+</section>
 {% endblock %}
