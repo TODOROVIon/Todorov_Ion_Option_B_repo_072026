@@ -59,7 +59,11 @@ security:
     # Note: Only the *first* matching rule is applied
 
     access_control:
-        # - { path: ^/api/login, roles: PUBLIC_ACCESS }
+        - { path: ^/connexion, roles: PUBLIC_ACCESS }
+        - { path: ^/inscription, roles: PUBLIC_ACCESS }
+        - { path: ^/product, roles: PUBLIC_ACCESS }
+        - { path: ^/compte, roles: ROLE_USER }
+        - { path: ^/panier, roles: ROLE_USER }
         - { path: ^/api, roles: IS_AUTHENTICATED_FULLY }
 
 when@test:
