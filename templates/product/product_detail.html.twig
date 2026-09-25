@@ -12,7 +12,7 @@
 
             <div class="product-detail-text">
                 <h2>{{ product.name }}</h2>
-                <h1 class="price-prod-id">{{ product.formatedPrice }} €</h1>
+                <h1 class="price-prod-id">{{ product.Price|number_format(2, ',', ' ')  }} €</h1>
                 <p>Description</p>
                 <h3>{{ product.fullDescription }}</h3>
                 <a class="ajout-panier" href="{{ path('app_panier_add', {id: product.id}) }}">Ajouter au panier</a>
