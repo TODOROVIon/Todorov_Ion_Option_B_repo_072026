@@ -24,7 +24,7 @@ class RegistrationFormType extends AbstractType
                 'label'=>'Nom',
                 'constraints'=>[
                     new NotBlank([
-                    'message'=>"Nom obligatoire, si non, je t'es retrouve"
+                    'message'=>"Nom est obligatoire"
                     ])
                 ]
             ])
@@ -32,7 +32,7 @@ class RegistrationFormType extends AbstractType
                 'label'=>'Prenom',
                 'constraints'=>[
                     new NotBlank([
-                    'message'=>"Prenom obligatoire, si non, je t'es retrouve"
+                    'message'=>"Prenom est obligatoire"
                     ])
                 ]
             ])
@@ -40,7 +40,7 @@ class RegistrationFormType extends AbstractType
                 'label'=>'Email',
                 'constraints'=>[
                     new NotBlank([
-                        'message'=>"Email obligatoire, si non, je t'es retrouve"
+                        'message'=>"Email est obligatoire"
                     ])
                 ]
             ])
@@ -69,7 +69,7 @@ class RegistrationFormType extends AbstractType
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue(
-                        message: "Label obligatoire, si non, je t'es retrouve",
+                        message: "Vous devez accepter les conditions générales d\'utilisation",
                     ),
                 ],
             ])

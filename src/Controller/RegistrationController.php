@@ -29,7 +29,7 @@ class RegistrationController extends AbstractController
 
             $user->setApiAccess(false);
 
-            $security->login($user,'form_login');               //TODO prendre l'info du login link success handler pour rediriger vers la page d'accueil
+            $security->login($user,'form_login');
 
             $entityManager->persist($user);
             $entityManager->flush();
